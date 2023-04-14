@@ -9,12 +9,13 @@ const articlesListSlice = createSlice({
   reducers: {
     // Payload to be an Article object {id, title, content, author, dateAdded}
     addArticle(state, action) {
+      const { id, title, content, author, dateAdded } = action.payload;
       state.data.push({
-        id: action.payload.id,
-        title: action.payload.title,
-        content: action.payload.content,
-        author: action.payload.author,
-        dateAdded: action.payload.dateAdded,
+        id,
+        title,
+        content,
+        author,
+        dateAdded,
       });
     },
     deleteArticleById(state, action) {
